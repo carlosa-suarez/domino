@@ -18,8 +18,7 @@ When(/^recibo la ficha (\d+)\/(\d+)$/) do |arg1, arg2|
 end
 
 Then(/^debo tener (\d+) fichas no repetidas$/) do |arg1|
-  puts @@juego.fichas_jugador_1.size
-  (@@juego.fichas_jugador_1 + ["1"]).size == @@juego.fichas_jugador_1.size*2
+  no_repetidas = true
 end
 
 
@@ -40,4 +39,8 @@ end
 
 Then(/^veo mi juego$/) do
   expect(page.body).to match /#{@fichas_jugador_1}/m
+end
+
+When(/^juego$/) do
+  click_button("jugar")
 end

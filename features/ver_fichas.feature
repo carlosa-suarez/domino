@@ -14,3 +14,9 @@ Feature: "Ver fichas"
 		Given entro al juego
 		When reparto
 		Then veo mi juego
+
+	Scenario: "El usuario debe ver como se disminuyen sus fichas cuando juega"
+		Given entro al juego
+		When reparto
+		And juego
+		Then debo ver "Tengo 6 fichas"
