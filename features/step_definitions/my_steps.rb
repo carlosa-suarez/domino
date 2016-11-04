@@ -29,6 +29,14 @@ Then(/^debo tener la ficha (\d+)\/(\d+)$/) do |arg1, arg2|
   @@juego.fichas_jugador_1.include?("#{arg1}/#{arg2}")
 end
 
-Then(/^debo ver "([^"]*)"$/) do |arg1|
-  expect(@@mensaje).to eq "Tengo 7 fichas"
+Then(/^debo ver "([^"]*)"$/) do |texto|
+  expect(@@mensaje).to eq texto
+end
+
+Then(/^mi oponente debe ver "([^"]*)"$/) do |texto|
+  expect(@@mensaje_oponente).to eq texto
+end
+
+Then(/^veo mi juego$/) do
+  expect(page.body).to match /#{@fichas_jugador_1}/m
 end
