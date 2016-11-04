@@ -9,20 +9,16 @@ class Juego
               "0/1","0/2","0/3","0/4","0/5","0/6","6/6"]
     @fichas_jugador_1 = Array.new
     @fichas_jugador_2 = Array.new
+        random = Random.new
+    @@cantidad_fichas_cada_uno = 7
+    @@cantidad_jugadores = 2
 
-    random = Random.new
-
-    #i = 0
-    #while i < 7 do
-    #  rand = random.rand(0..@domino.size)
-    #   @fichas_jugador_1[i] = @domino[rand]
-    #end
-    @domino.each do |ficha|
-      if @fichas_jugador_1.size < 7
-        @fichas_jugador_1.push(ficha)
-      elsif @fichas_jugador_2.size < 7
-        @fichas_jugador_2.push(ficha)
-      end
+    i = 0
+    while i < @@cantidad_fichas_cada_uno do
+     rand = random.rand(0...@domino.size)
+      @fichas_jugador_1[i] = @domino[rand]
+      @fichas_jugador_2[i] = @domino[rand]
+      i = i + 1
     end
   end
 end
