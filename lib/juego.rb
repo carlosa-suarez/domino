@@ -12,14 +12,8 @@ class Juego
         random = Random.new
     @@cantidad_fichas_cada_uno = 7
     @@cantidad_jugadores = 2
+    repartir_fichas_a_jugadores
 
-    i = 0
-    while i < @@cantidad_fichas_cada_uno do
-     rand = random.rand(0...@domino.size)
-      @fichas_jugador_1[i] = @domino[rand]
-      @fichas_jugador_2[i] = @domino[rand]
-      i = i + 1
-    end
   end
 
   def conteoFichas
@@ -28,5 +22,34 @@ class Juego
 
   def conteoFichasOponente
     "Oponente tiene #{@fichas_jugador_2.size} fichas"
+  end
+
+  private
+  def repartir_fichas_a_jugadores
+    i = 0
+    while i < @@cantidad_fichas_cada_uno do
+     rand = Random.rand(0..@domino.size-1)
+     puts rand
+
+     if (!(@fichas_jugador_1.include? @domino[rand]) and (!@fichas_jugador_2.include? @domino[rand]))
+       puts "agrego jugador 1"
+       @fichas_jugador_1[i]=@domino[rand]
+       i = i + 1
+     end
+     puts "Fichas jugador 1 son #{@fichas_jugador_1} "
+
+    end
+    i = 0
+    while i < @@cantidad_fichas_cada_uno do
+     rand = Random.rand(0..@domino.size-1)
+     puts rand
+
+     if not @fichas_jugador_1.include? @domino[rand] and not  @fichas_jugador_2.include? @domino[rand]
+      puts "agrego jugador 2"
+       @fichas_jugador_2[i]=@domino[rand]
+       i = i + 1
+     end
+     puts "Fichas jugador 2 son #{@fichas_jugador_2} "
+    end
   end
 end
