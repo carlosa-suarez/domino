@@ -25,4 +25,8 @@ class Juego
       end
     end
   end
+
+  def conteoFichas
+    "Tengo #{@fichas_jugador_1.size} fichas"
+  end
 end

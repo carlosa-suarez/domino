@@ -8,8 +8,8 @@ get '/' do
 end
 
 post '/repartir' do
-  @@juego.repartir
+  @@juego.repartir()
 
-  @@mensaje = @juego.conteoFichas()
+  @@mensaje = @@juego.conteoFichas()
 
 end

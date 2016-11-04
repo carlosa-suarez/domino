@@ -3,10 +3,11 @@ require './lib/juego'
 describe "Juego" do
   before(:each) do
     @juego = Juego.new
+    @juego.repartir()
   end
   it "muestra cuantas fichas tiene un jugador" do
-    fichas = [0,1,2,3,4,5,6]
-    expect(fichas.size).to be (7)
+    mensaje = @juego.conteoFichas()
+    expect(mensaje).to eq "Tengo 7 fichas"
   end
 
 end
