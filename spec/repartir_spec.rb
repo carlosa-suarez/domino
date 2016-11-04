@@ -12,13 +12,14 @@ end
     expect(@@juego.fichas_jugador_2.size).to eq 7
   end
 
-  #it "La reparticion debe ser aleatoria" do
-  #  @@juego.repartir
-  #  juego_1_jugador_1 = @@juego.fichas_jugador_1
-  #  @@juego.repartir
-  #  juego_2_jugador_1 = @@juego.fichas_jugador_1
-  #
-  #    expect(juego_1_jugador_1).not_to eq juego_2_jugador_1
-  #  end
+  it "La reparticion debe ser aleatoria" do
+     @@juego.repartir
+    juego_1_jugador_1 = @@juego.fichas_jugador_1
+    @@juego.repartir
+    juego_1_jugador_2 = @@juego.fichas_jugador_2
+
+    expect(juego_1_jugador_1).not_to eq juego_1_jugador_2
+
+    end
 
 end
