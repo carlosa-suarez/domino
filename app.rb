@@ -3,11 +3,13 @@ require './lib/juego'
 
 get '/' do
   @@juego = Juego.new
+  @@mensaje = ""
   erb :index
 end
 
 post '/repartir' do
   @@juego.repartir
-  "Uruguay 15 copas"
+
+  @@mensaje = @juego.conteoFichas()
 
 end
