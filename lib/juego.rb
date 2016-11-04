@@ -1,5 +1,5 @@
 class Juego
-  attr_accessor  :fichas_jugador_1, :fichas_jugador_2
+  attr_accessor  :fichas_jugador_1, :fichas_jugador_2,:cantidad_fichas_cada_uno
 
   def repartir
     @domino = Array.new

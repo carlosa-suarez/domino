@@ -19,7 +19,7 @@ end
     juego_1_jugador_2 = @@juego.fichas_jugador_2
 
     expect(juego_1_jugador_1).not_to eq juego_1_jugador_2
-
+  
     end
 
 end
