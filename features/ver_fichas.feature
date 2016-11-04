@@ -1,11 +1,11 @@
 Feature: "Ver fichas"
 
-	Scenario: "El usuario debe ver la cantidad de fichas propias"
+	Scenario: "El usuario debe ver que tiene 7 fichas"
 		Given entro al juego
-		When se reparten fichas
+		When reparto
 		Then debo ver "Tengo 7 fichas"
 
-	Scenario: "El usuario debe ver la cantidad de fichas del oponente"
+	Scenario: "El usuario debe ver que el oponente tiene 7 fichas"
 		Given entro al juego
-		When se reparten fichas
+		When reparto
 		Then debo ver "jugador tiene 7 fichas"
