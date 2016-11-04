@@ -12,10 +12,12 @@ Scenario: "No poder jugar la ficha 6/6"
   Given entro al juego
   When reparto
   And no tengo la ficha 6/6
-  Then pasa el turno al otro jugador
+  And pasa el turno al otro jugador
+  Then quedo con 7 fichas
 
 Scenario: "No poder jugar la ficha 6/6"
   Given estoy en mi turno
   When las fichas en los extremos son 4/5 y 5/3
   And solo tengo la ficha 6/6
-  Then pasa el turno al otro jugador
+  And pasa el turno al otro jugador
+  Then quedo con 1 ficha
